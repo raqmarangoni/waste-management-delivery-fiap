@@ -1,0 +1,148 @@
+{
+  "info": {
+    "name": "WasteManagement API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "waste-management-complete"
+  },
+  "item": [
+    {
+      "name": "Collections",
+      "item": [
+        {
+          "name": "GET - List Collections (paginated)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/collections?page=1&pageSize=10",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "collections"],
+              "query": [
+                { "key": "page", "value": "1" },
+                { "key": "pageSize", "value": "10" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET - Get Collection by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/collections/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "collections", "1"]
+            }
+          }
+        },
+        {
+          "name": "POST - Create Collection",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"location\": \"Centro\",\n  \"collectedAt\": \"2025-02-01T12:30:00\",\n  \"materialType\": \"Plástico\",\n  \"weightKg\": 12.5\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/collections",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "collections"]
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "name": "Alerts",
+      "item": [
+        {
+          "name": "GET - List Alerts",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/alerts",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "alerts"]
+            }
+          }
+        },
+        {
+          "name": "POST - Create Alert",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"message\": \"Lixeira cheia na Rua A\",\n  \"resolved\": false\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/alerts",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "alerts"]
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "name": "Reports",
+      "item": [
+        {
+          "name": "GET - Summary Report",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/reports/summary",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "reports", "summary"]
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "name": "Sensors",
+      "item": [
+        {
+          "name": "POST - Telemetry",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"containerId\": \"C1\",\n  \"fillLevelPercent\": 92\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/sensors/telemetry",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "sensors", "telemetry"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
