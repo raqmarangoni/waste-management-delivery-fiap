@@ -2,7 +2,7 @@ name: CI/CD
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "staging" ]
 
 jobs:
   build:
@@ -23,7 +23,9 @@ jobs:
       run: dotnet build --no-restore
 
     - name: Deploy Staging
+      if: github.ref == 'refs/heads/staging'
       run: echo "Deploy staging..."
 
     - name: Deploy Production
+      if: github.ref == 'refs/heads/main'
       run: echo "Deploy produção..."
