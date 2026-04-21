@@ -157,8 +157,11 @@ migrations/create_tables.sql
 
 - Print do pipeline rodando no GitHub Actions
 
-![alt text](execucao-pipeline.png)
+![alt text](pipeline-staging-1.png)
+![alt text](pipeline-staging-2.png)
 
+![alt text](pipeline-main-1.png)
+![alt text](pipeline-main-2.png)
 ---
 
 ## 🧰 Tecnologias utilizadas
