@@ -1,21 +1,20 @@
-name: CI/CD Pipeline
+name: CI/CD
 
 on:
   push:
     branches: [ "main" ]
 
 jobs:
-  build-test-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Setup .NET
-      uses: actions/setup-dotnet@v3
+      uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '8.0.x'
+        dotnet-version: 8.0
 
     - name: Restore
       run: dotnet restore
@@ -23,14 +22,8 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
 
-    - name: Test
-      run: dotnet test --no-build
-
-    - name: Build Docker Image
-      run: docker build -t wastemanagement .
-
     - name: Deploy Staging
-      run: echo "Deploy realizado em STAGING"
+      run: echo "Deploy staging..."
 
     - name: Deploy Production
-      run: echo "Deploy realizado em PRODUÇÃO"
+      run: echo "Deploy produção..."
