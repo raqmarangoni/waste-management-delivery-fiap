@@ -80,6 +80,11 @@ http://localhost:8080/swagger
 
 O projeto utiliza GitHub Actions para automação do ciclo de vida da aplicação.
 
+O pipeline é executado automaticamente a cada push nas branches:
+
+- staging
+- main
+
 Etapas do pipeline:
 
 - Checkout do código
@@ -87,9 +92,8 @@ Etapas do pipeline:
 - Restore das dependências
 - Build da aplicação
 - Execução de testes automatizados
-- Build da imagem Docker
-- Deploy simulado em staging
-- Deploy simulado em produção
+- Deploy simulado na branch staging
+- Deploy simulado na branch main
 
 Local do pipeline:
 .github/workflows/ci-cd.yml
@@ -148,20 +152,29 @@ migrations/create_tables.sql
 
 - Execução do Docker (build + subida do container)
 
-![alt text](docker-compose-terminal-1.png)
-![alt text](docker-compose-terminal-2.png)
+![docker](images/docker-compose-terminal-1.png)
+![docker](images/docker-compose-terminal-2.png)
 
-- Print do Swagger em http://localhost:8080/swagger
+- Swagger em execução
 
-![alt text](waste-management-api-swagger.png)
+![swagger](images/waste-management-api-swagger.png)
 
-- Print do pipeline rodando no GitHub Actions
+- Execução do pipeline (branch staging)
 
-![alt text](pipeline-staging-1.png)
-![alt text](pipeline-staging-2.png)
+![pipeline](images/pipeline-staging-1.png)
+![pipeline](images/pipeline-staging-2.png)
+![pipeline](images/pipeline-staging-3.png)
+![pipeline](images/pipeline-staging-4.png)
+![pipeline](images/pipeline-staging-5.png)
 
-![alt text](pipeline-main-1.png)
-![alt text](pipeline-main-2.png)
+- Execução do pipeline (branch main)
+
+![pipeline](images/pipeline-main-1.png)
+![pipeline](images/pipeline-main-2.png)
+![pipeline](images/pipeline-main-3.png)
+![pipeline](images/pipeline-main-4.png)
+![pipeline](images/pipeline-main-5.png)
+
 ---
 
 ## 🧰 Tecnologias utilizadas
@@ -178,12 +191,12 @@ migrations/create_tables.sql
 
 ## 📌 Considerações finais
 
-O projeto foi adaptado para simular um ambiente próximo ao de produção, com:
+O projeto foi estruturado para simular um fluxo de DevOps com:
 
 - Automação de build e deploy
 - Containerização da aplicação
-- Persistência de dados
-- Testes automatizados
-- Pipeline CI/CD
+- Persistência de dados com Docker Volume
+- Execução de testes automatizados
+- Pipeline CI/CD com separação por branch (staging e main)
 
 ---
