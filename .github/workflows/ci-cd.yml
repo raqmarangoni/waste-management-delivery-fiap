@@ -15,7 +15,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '9.0.x'
+        dotnet-version: '8.0.x'
 
     - name: Restore
       run: dotnet restore
@@ -24,13 +24,13 @@ jobs:
       run: dotnet build --no-restore
 
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --no-build
 
     - name: Build Docker Image
-      run: docker build -t waste-app .
+      run: docker build -t wastemanagement .
 
-    - name: Simulated Deploy Staging
+    - name: Deploy Staging
       run: echo "Deploy realizado em STAGING"
 
-    - name: Simulated Deploy Production
+    - name: Deploy Production
       run: echo "Deploy realizado em PRODUÇÃO"
