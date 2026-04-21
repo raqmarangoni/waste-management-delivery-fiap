@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  wastemanagement-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wastemanagement-api
+    ports:
+      - "8080:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    volumes:
+      - waste_data:/app/data
+
+volumes:
+  waste_data:
