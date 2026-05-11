@@ -16,14 +16,24 @@ jobs:
       with:
         dotnet-version: 8.0
 
-    - name: Restore
-      run: dotnet restore
+      - name: Restaurar dependências da API
+        run: dotnet restore src/WasteManagement.API/WasteManagement.API.csproj
 
-    - name: Build
-      run: dotnet build --no-restore
+      - name: Restaurar dependências dos testes
+        run: dotnet restore tests/WasteManagement.Tests/WasteManagement.Tests.csproj
 
-    - name: Test
-      run: dotnet test --no-build
+      - name: Build da API
+        run: dotnet build src/WasteManagement.API/WasteManagement.API.csproj --configuration Release --no-restore
+
+      - name: Executar testes automatizados BDD, API e contrato
+        run: dotnet test tests/WasteManagement.Tests/WasteManagement.Tests.csproj --configuration Release --no-restore --logger "trx;LogFileName=test-results.trx"
+
+      - name: Publicar evidência dos testes
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results
+          path: tests/WasteManagement.Tests/TestResults/**/*.trx
 
     - name: Deploy Staging
       if: github.ref == 'refs/heads/staging'
