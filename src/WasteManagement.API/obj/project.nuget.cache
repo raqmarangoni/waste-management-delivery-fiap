@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hJFjrnyoR9w=",
+  "dgSpecHash": "1XzYByQRpfg=",
   "success": true,
-  "projectFilePath": "/Users/raquelmarangoni/Downloads/Waste Management Delivery .NET Core 8/src/WasteManagement.API/WasteManagement.API.csproj",
+  "projectFilePath": "/Users/raquelmarangoni/Documents/educacao/fiap/waste-management-delivery-fiap/src/WasteManagement.API/WasteManagement.API.csproj",
   "expectedPackageFiles": [
     "/Users/raquelmarangoni/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/raquelmarangoni/.nuget/packages/microsoft.bcl.asyncinterfaces/6.0.0/microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

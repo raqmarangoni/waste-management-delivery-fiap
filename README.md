@@ -27,10 +27,88 @@ Banco: SQLite
 
 ---
 
-## 🧪 Testes
+## 🧪 Testes Automatizados
 
-- Testes automatizados com xUnit
-- Um teste por controller com validação de status HTTP 200
+A aplicação possui uma suíte completa de testes automatizados utilizando:
+
+- xUnit
+- Reqnroll (BDD com Gherkin)
+- FluentAssertions
+- JsonSchema.Net
+
+Os testes cobrem:
+
+- validação de status HTTP;
+- validação de payload JSON;
+- validação contratual com JSON Schema;
+- testes de integração das APIs;
+- cenários BDD (Behavior Driven Development).
+
+### 📁 Estrutura dos testes
+
+```text
+tests/WasteManagement.Tests
+├── Features
+├── Schemas
+├── StepDefinitions
+└── Support
+```
+
+### 📌 Cenários BDD implementados
+
+- consultar coletas com paginação;
+- registrar coleta válida de material reciclável;
+- consultar coleta inexistente;
+- receber telemetria dentro do limite operacional;
+- gerar alerta para container quase cheio;
+- consultar relatório consolidado ESG;
+- registrar e consultar alertas operacionais.
+
+### 📄 Contratos JSON Schema
+
+Os contratos utilizados nos testes estão localizados em:
+
+```text
+tests/WasteManagement.Tests/Schemas
+```
+
+### ▶️ Executar testes
+
+```bash
+cd tests/WasteManagement.Tests
+dotnet test
+```
+
+### ✅ Resultado validado
+
+```text
+Aprovado!
+Com falha: 0
+Aprovado: 11
+Ignorado: 0
+Total: 11
+```
+
+### 📑 Gerar evidência TRX
+
+```bash
+dotnet test --logger "trx;LogFileName=test-results.trx"
+```
+
+Resultado via terminal:
+
+![docker](images/execucao-testes.png)
+
+### 🔍 Estratégia aplicada
+
+Os testes foram desenvolvidos considerando os pilares ESG do projeto:
+
+- rastreabilidade operacional;
+- governança de APIs;
+- confiabilidade de integrações;
+- estabilidade da aplicação;
+- previsibilidade dos contratos de serviço;
+- isolamento de cenários utilizando SQLite temporário.
 
 ---
 
