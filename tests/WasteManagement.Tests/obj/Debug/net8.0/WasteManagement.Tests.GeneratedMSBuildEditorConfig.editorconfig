@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WasteManagement.Tests
-build_property.ProjectDir = /Users/raquelmarangoni/Downloads/Waste Management Delivery .NET Core 8/tests/WasteManagement.Tests/
+build_property.ProjectDir = /Users/raquelmarangoni/Documents/educacao/fiap/waste-management-delivery-fiap/tests/WasteManagement.Tests/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

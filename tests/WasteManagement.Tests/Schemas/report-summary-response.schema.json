@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["totalCollections", "totalWeight", "byMaterial"],
+  "properties": {
+    "totalCollections": { "type": "integer", "minimum": 0 },
+    "totalWeight": { "type": "number", "minimum": 0 },
+    "byMaterial": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["material", "weight"],
+        "properties": {
+          "material": { "type": ["string", "null"] },
+          "weight": { "type": "number", "minimum": 0 }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
