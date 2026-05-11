@@ -2965,11 +2965,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/raquelmarangoni/Downloads/Waste Management Delivery .NET Core 8/src/WasteManagement.API/WasteManagement.API.csproj",
+      "projectUniqueName": "/Users/raquelmarangoni/Documents/educacao/fiap/waste-management-delivery-fiap/src/WasteManagement.API/WasteManagement.API.csproj",
       "projectName": "WasteManagement.API",
-      "projectPath": "/Users/raquelmarangoni/Downloads/Waste Management Delivery .NET Core 8/src/WasteManagement.API/WasteManagement.API.csproj",
+      "projectPath": "/Users/raquelmarangoni/Documents/educacao/fiap/waste-management-delivery-fiap/src/WasteManagement.API/WasteManagement.API.csproj",
       "packagesPath": "/Users/raquelmarangoni/.nuget/packages/",
-      "outputPath": "/Users/raquelmarangoni/Downloads/Waste Management Delivery .NET Core 8/src/WasteManagement.API/obj/",
+      "outputPath": "/Users/raquelmarangoni/Documents/educacao/fiap/waste-management-delivery-fiap/src/WasteManagement.API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/raquelmarangoni/.nuget/NuGet/NuGet.Config"
